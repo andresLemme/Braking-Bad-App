@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
 
+const initialQuote = {
+  text: "autoe",
+  author: "autor"
+}
+
 function App() {
+  const [quote, setQuote] = useState(initialQuote)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className="app">
+  <img 
+  src="https://upload.wikimedia.org/wikipedia/commons/7/77/Breaking_Bad_logo.svg"
+  alt="logo"
+/>
+  <button>Get Another</button>
+  <p>{quote.text} <br/>
+  <span>- {quote.author}</span> 
+  </p>
+  </div>
   );
 }
 
